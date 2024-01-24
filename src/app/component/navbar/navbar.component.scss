@@ -1,0 +1,38 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: deepskyblue;
+  width: 100%;
+}
+img{
+  width: 60px;
+}
+.searchAll{
+  display: flex;
+  align-items: center;
+  background-color:white;
+  border-radius: 12px;
+  padding: 0px 10px;
+  height: 50px;
+  margin-top: 6px;
+  margin-left: 230px;
+}
+input{
+  border-radius: 10px;
+  border:none;
+  width: 410px;
+  height: 30px;
+}
+.navigate{
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: space-between;
+  color: white;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{color: red}
