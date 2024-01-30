@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "shopcafe",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

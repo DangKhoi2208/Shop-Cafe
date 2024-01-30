@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shopcafe-f9b43": {
+      "hosting": {
+        "shopcafe": [
+          "shopcafe-f9b43"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shopcafe-f9b43"
+  }
+}

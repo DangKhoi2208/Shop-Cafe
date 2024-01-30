@@ -1,1 +1,168 @@
-<p>dashboard works!</p>
+<button
+  size="m"
+  tuiButton
+  tuiHint="Some text"
+  tuiHintDirection="top"
+  type="button"
+  (click)="showDialog()"
+>
+  <i class="fa-solid fa-plus"></i>
+</button>
+
+<ng-template
+  let-observer
+  [tuiDialogOptions]="{label: 'Them', size: 's'}"
+  [(tuiDialog)]="open"
+>
+  <form
+    [formGroup]="addForm"
+    (ngSubmit)="create()"
+  >
+    <p>This abstracts away service and subscription</p>
+    <tui-input
+      formControlName="picture"
+      tuiAutoFocus
+    >
+      Picture
+    </tui-input>
+    <tui-input
+      formControlName="name"
+      tuiAutoFocus
+    >
+      Name
+    </tui-input>
+    <tui-input
+      formControlName="price"
+      tuiAutoFocus
+    >
+      Price
+    </tui-input>
+    <tui-input
+      formControlName="des"
+      tuiAutoFocus
+    >
+      Description
+    </tui-input>
+    <tui-input
+      formControlName="instock"
+      tuiAutoFocus
+    >
+      InStock
+    </tui-input>
+    <p>
+      <button
+        tuiButton
+        type="submit"
+      >
+        Them
+      </button>
+    </p>
+  </form>
+</ng-template>
+
+
+<table class="tui-table">
+  <tbody>
+  <tr class="tui-table__tr tui-table__tr_border_none">
+    <th class="tui-table__th tui-table__th_first">
+      Hình ảnh
+    </th>
+    <th class="tui-table__th">Mô tả</th>
+    <th class="tui-table__th">Tên</th>
+    <th class="tui-table__th">Giá</th>
+    <th class="tui-table__th tui-table__th_last">Số lượng</th>
+  </tr>
+
+
+  @for( item of cafeService.cafe;track item;){
+    <tr class="tui-table__tr tui-table__tr_border_none">
+      <td class="tui-table__td tui-table__td_first">
+        <div class="picture">
+          <img class="img" [src]=item.picture>
+        </div>
+      </td>
+      <td class="tui-table__td">{{item.des}}</td>
+      <td class="tui-table__td">{{item.name}}</td>
+      <td class="tui-table__td">{{item.price}}</td>
+      <td class="tui-table__td tui-table__td_last">{{item.instock}}</td>
+      <td class="tui-table__td tui-table__td_last">
+        <button
+          size="m"
+          tuiButton
+          tuiHint="Some text"
+          tuiHintDirection="top"
+          type="button"
+          (click)="showEditDialog(item)"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+
+        <button
+          size="m"
+          tuiButton
+          tuiHint="Some text"
+          tuiHintDirection="top"
+          type="button"
+        >
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  }
+
+  </tbody>
+</table>
+
+
+
+
+<ng-template
+  let-observer
+  [tuiDialogOptions]="{label: 'Edit', size: 's'}"
+  [(tuiDialog)]="openEdit"
+>
+  <form
+    [formGroup]="editForm"
+    (ngSubmit)="update()"
+  >
+    <p>This abstracts away service and subscription</p>
+    <tui-input
+      formControlName="picture"
+      tuiAutoFocus
+    >
+      Picture
+    </tui-input>
+    <tui-input
+      formControlName="name"
+      tuiAutoFocus
+    >
+      Name
+    </tui-input>
+    <tui-input
+      formControlName="price"
+      tuiAutoFocus
+    >
+      Price
+    </tui-input>
+    <tui-input
+      formControlName="des"
+      tuiAutoFocus
+    >
+      Description
+    </tui-input>
+    <tui-input
+      formControlName="instock"
+      tuiAutoFocus
+    >
+      InStock
+    </tui-input>
+    <p>
+      <button
+        tuiButton
+        type="submit"
+      >
+        Sửa
+      </button>
+    </p>
+  </form>
+</ng-template>

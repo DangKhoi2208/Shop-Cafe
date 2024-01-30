@@ -1,192 +1,62 @@
 <div class="main">
 
   <div class="allPost">
-    <div class="post1">
-      <div class="picture-post1">
-        <img class="picture1"
-             src="https://shainblumphoto.com/wp-content/uploads/2015/11/sanfranfogwide1200.jpg" alt="">
-      </div>
-      <div class="capPicture">
-        <p class="cap">
-                        <span class="vegan">
-                            #Vegan
-                        </span>
-          Toast Hacks That Will Literally Change Your Life Forever. We’ve got a slew of toasty ideas
-          that’ll take your morning meals to new heights.
-        </p>
-      </div>
-      <div class="reaction">
-        <div class="tymAndCmt">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-          <span class="material-symbols-outlined">
-                            chat_bubble
-                        </span>
+    @for(cafe of this.cafeService.cafe;track $index){
+      <div class="post1" >
+        <div class="picture-post1">
+          <img class="picture1"
+               [src]="cafe.picture" alt="">
         </div>
-        <span class="material-symbols-outlined">
-                        ios_share
-                    </span>
-      </div>
-    </div>
-
-
-    <div class="post1">
-      <div class="picture-post1">
-        <img class="picture1"
-             src="https://shainblumphoto.com/wp-content/uploads/2015/11/sanfranfogwide1200.jpg" alt="">
-      </div>
-      <div class="capPicture">
-        <p class="cap">
-                        <span class="vegan">
-                            #Vegan
-                        </span>
-          Toast Hacks That Will Literally Change Your Life Forever. We’ve got a slew of toasty ideas
-          that’ll take your morning meals to new heights.
-        </p>
-      </div>
-      <div class="reaction">
-        <div class="tymAndCmt">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-          <span class="material-symbols-outlined">
-                            chat_bubble
-                        </span>
+        <div class="capPicture">
+          <p class="cap">
+            {{cafe.name}}
+          </p>
         </div>
-        <span class="material-symbols-outlined">
-                        ios_share
-                    </span>
-      </div>
-    </div>
+        <div class="reaction">
+          <div class="tymAndCmt">
 
+            <button
+              icon="tuiIconHeart"
+              tuiIconButton
+              type="button"
+              class="tui-space_right-3 tui-space_bottom-3"
+              appearance="flat"
+            ></button>
 
+            <button
+              icon="tuiIconMessageSquare"
+              tuiIconButton
+              type="button"
+              class="tui-space_right-3 tui-space_bottom-3"
+              appearance="flat"
+            ></button>
+          </div>
 
-    <div class="post1">
-      <div class="picture-post1">
-        <img class="picture1"
-             src="https://shainblumphoto.com/wp-content/uploads/2015/11/sanfranfogwide1200.jpg" alt="">
-      </div>
-      <div class="capPicture">
-        <p class="cap">
-                        <span class="vegan">
-                            #Vegan
-                        </span>
-          Toast Hacks That Will Literally Change Your Life Forever. We’ve got a slew of toasty ideas
-          that’ll take your morning meals to new heights.
-        </p>
-      </div>
-      <div class="reaction">
-        <div class="tymAndCmt">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-          <span class="material-symbols-outlined">
-                            chat_bubble
-                        </span>
-        </div>
-        <span class="material-symbols-outlined">
-                        ios_share
-                    </span>
-      </div>
-    </div>
+            <div class="shopingInfo">
+            <button
+              icon="tuiIconShoppingCart" (click) ="buy(cafe)"
+              tuiIconButton
+              type="button"
+              class="tui-space_right-3 tui-space_bottom-3"
+              appearance="flat"
+            ></button>
 
+              <button
+                icon="tuiIconInfo"
+                tuiIconButton
+                type="button"
+                appearance="flat"
+                class="tui-space_right-3 tui-space_bottom-3"
+                [routerLink]="[cafe.id]" (click)="getCafebyId(cafe.id)"
+              ></button>
 
-
-    <div class="post1">
-      <div class="picture-post1">
-        <img class="picture1"
-             src="https://shainblumphoto.com/wp-content/uploads/2015/11/sanfranfogwide1200.jpg" alt="">
+          </div>
       </div>
-      <div class="capPicture">
-        <p class="cap">
-                        <span class="vegan">
-                            #Vegan
-                        </span>
-          Toast Hacks That Will Literally Change Your Life Forever. We’ve got a slew of toasty ideas
-          that’ll take your morning meals to new heights.
-        </p>
       </div>
-      <div class="reaction">
-        <div class="tymAndCmt">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-          <span class="material-symbols-outlined">
-                            chat_bubble
-                        </span>
-        </div>
-        <span class="material-symbols-outlined">
-                        ios_share
-                    </span>
-      </div>
-    </div>
-
-
-
-
-    <div class="post1">
-      <div class="picture-post1">
-        <img class="picture1"
-             src="https://shainblumphoto.com/wp-content/uploads/2015/11/sanfranfogwide1200.jpg" alt="">
-      </div>
-      <div class="capPicture">
-        <p class="cap">
-                        <span class="vegan">
-                            #Vegan
-                        </span>
-          Toast Hacks That Will Literally Change Your Life Forever. We’ve got a slew of toasty ideas
-          that’ll take your morning meals to new heights.
-        </p>
-      </div>
-      <div class="reaction">
-        <div class="tymAndCmt">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-          <span class="material-symbols-outlined">
-                            chat_bubble
-                        </span>
-        </div>
-        <span class="material-symbols-outlined">
-                        ios_share
-                    </span>
-      </div>
-    </div>
-
-
-    <div class="post1">
-      <div class="picture-post1">
-        <img class="picture1"
-             src="https://shainblumphoto.com/wp-content/uploads/2015/11/sanfranfogwide1200.jpg" alt="">
-      </div>
-      <div class="capPicture">
-        <p class="cap">
-                        <span class="vegan">
-                            #Vegan
-                        </span>
-          Toast Hacks That Will Literally Change Your Life Forever. We’ve got a slew of toasty ideas
-          that’ll take your morning meals to new heights.
-        </p>
-      </div>
-      <div class="reaction">
-        <div class="tymAndCmt">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-          <span class="material-symbols-outlined">
-                            chat_bubble
-                        </span>
-        </div>
-        <span class="material-symbols-outlined">
-                        ios_share
-                    </span>
-      </div>
-    </div>
-
-  </div>
+    }
 
 
 </div>
 
+</div>
 

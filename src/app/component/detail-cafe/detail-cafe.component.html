@@ -1,1 +1,62 @@
-<p>detail-cafe works!</p>
+<div class="allPost">
+
+  <div class="post1" >
+    <div class="picture-post1">
+      <img class="picture1"
+           [src]="productDetail.picture" alt="">
+    </div>
+    <div class="capPicture">
+      <p class="cap">
+       Tên: {{productDetail.name}}
+      </p>
+
+      <p class="cap">
+        Miêu tả:{{productDetail.des}}
+      </p>
+
+
+      <p class="cap">
+        Số Lượng : {{productDetail.instock}}
+      </p>
+
+      <p class="cap">
+        Giá: {{productDetail.price}} VNĐ
+      </p>
+
+    </div>
+
+    <div class="reaction">
+      <button
+        icon="tuiIconHeart"
+        tuiIconButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+        appearance="flat"
+      ></button>
+
+      <button
+        icon="tuiIconMessageSquare"
+        tuiIconButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+        appearance="flat"
+      ></button>
+
+
+      <button
+        icon="tuiIconShoppingCart" (click)="addToCart(productDetail)"
+        tuiIconButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+        appearance="flat"
+      ></button>
+    </div>
+
+        </div>
+      </div>
+<!--      <a class="material-symbols-outlined">-->
+<!--        manage_search-->
+<!--      </a>-->
+
+
+

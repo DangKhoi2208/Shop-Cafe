@@ -1,1 +1,157 @@
-<p>cart-cafe works!</p>
+<!--@if(this.cartCafe == []){-->
+<!--  <div class="main">-->
+<!--  </div>-->
+<!--} @else {-->
+<!--  <div class="main">-->
+
+<!--    <div class="allPost">-->
+<!--      @for(cafe of this.cartCafe;track $index){-->
+<!--        <div class="post1" >-->
+<!--          <div class="picture-post1">-->
+<!--            <img class="picture1"-->
+<!--                 src="{{cafe.picture}}" alt="">-->
+<!--          </div>-->
+<!--          <div class="capPicture">-->
+<!--            <p class="cap">-->
+<!--              Tên: {{cafe.name}}-->
+<!--            </p>-->
+
+<!--            <p class="cap">-->
+<!--              Miêu tả:{{cafe.des}}-->
+<!--            </p>-->
+
+<!--            <p class="cap">-->
+<!--              Số Lượng :{{cafe.instock}}-->
+<!--            </p>-->
+
+<!--            <p class="cap">-->
+<!--              Giá :{{cafe.price}}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <div class="reaction">-->
+<!--            <div class="tymAndCmt">-->
+<!--              <button-->
+<!--                icon="tuiIconHeart"-->
+<!--                tuiIconButton-->
+<!--                type="button"-->
+<!--                class="tui-space_right-3 tui-space_bottom-3"-->
+<!--                appearance="flat"-->
+<!--              ></button>-->
+<!--              <button-->
+<!--                icon="tuiIconMessageSquare"-->
+<!--                tuiIconButton-->
+<!--                type="button"-->
+<!--                class="tui-space_right-3 tui-space_bottom-3"-->
+<!--                appearance="flat"-->
+<!--              ></button>-->
+<!--            </div>-->
+<!--            <div class="trashInfo">-->
+<!--              <button-->
+<!--                icon="tuiIconTrash"-->
+<!--                tuiIconButton-->
+<!--                type="button"-->
+<!--                appearance="flat"-->
+<!--                class="tui-space_right-3 tui-space_bottom-3"-->
+<!--              ></button>-->
+
+<!--              <button-->
+<!--                icon="tuiIconInfo"-->
+<!--                tuiIconButton-->
+<!--                type="button"-->
+<!--                appearance="flat"-->
+<!--                class="tui-space_right-3 tui-space_bottom-3"-->
+<!--              ></button>-->
+<!--            </div>-->
+
+
+
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      }-->
+<!--    </div>-->
+
+
+<!--    <h1>-->
+<!--&lt;!&ndash;      Tổng:{{}}&ndash;&gt;-->
+<!--    </h1>-->
+<!--  </div>-->
+<!--}-->
+
+
+
+<div style="padding: 1rem">
+  <h1>Your Cart</h1>
+
+  <div class="shopping-cart">
+    <div class="column-labels">
+      <label class="product-image">Image</label>
+      <label class="product-details">Product</label>
+      <label class="product-price">Price</label>
+      <label class="product-quantity">Quantity</label>
+      <label class="product-removal">Remove</label>
+      <label class="product-line-price">Total</label>
+    </div>
+
+    @for (item of cart.productList; track item;let i = $index) {
+      <div class="product">
+        <div class="product-image">
+          <img src="{{ item.picture}}" />
+        </div>
+        <div class="product-details">
+          <div class="product-title">{{ item.name }}</div>
+          <p class="product-description">
+            {{ item.name }}
+          </p>
+        </div>
+        <div class="product-price">{{ item.price }}</div>
+        <div class="product-quantity">
+          <input type="number" min="1" [formControl]="this.quantityFormList[i]" />
+        </div>
+        <div class="product-removal">
+          <button
+            tuiButton
+            type="button"
+            size="s"
+            appearance="accent"
+            (click)="removeProduct(i)"
+          >
+            Remove
+          </button>
+        </div>
+        <div class="product-line-price">
+          {{ count(this.quantityFormList[i].value, item.price) }}
+        </div>
+      </div>
+    }
+
+    <div class="totals">
+      <div class="totals-item">
+        <label>Subtotal</label>
+        <div class="totals-value" id="cart-subtotal">{{ cart.total }}</div>
+      </div>
+      <!-- <div class="totals-item">
+        <label>Tax (5%)</label>
+        <div class="totals-value" id="cart-tax">3.60</div>
+      </div>
+      <div class="totals-item">
+        <label>Shipping</label>
+        <div class="totals-value" id="cart-shipping">15.00</div>
+      </div>
+      <div class="totals-item totals-item-total">
+        <label>Grand Total</label>
+        <div class="totals-value" id="cart-total">90.57</div>
+      </div> -->
+    </div>
+
+    <button
+      tuiButton
+      type="button"
+      icon="tuiIconCommand"
+      size="s"
+      class="checkout"
+    >
+      Checkout
+    </button>
+  </div>
+</div>

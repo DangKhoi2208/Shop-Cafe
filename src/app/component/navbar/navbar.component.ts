@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +10,10 @@ import {RouterLink} from "@angular/router";
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  constructor(private authService: AuthService) {
+  }
 
+  signOut(){
+    this.authService.signOutGg()
+  }
 }
